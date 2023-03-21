@@ -1,0 +1,15 @@
+<app-header titulo="Toast"></app-header>
+
+<ion-content class="ion-padding">
+
+  <ion-button (click)="onClickwithoptions()" expand="block" shape="round">
+    Toast With Options
+  </ion-button>
+  <p>{{handlerMessage}}</p>
+  <p>{{roleMessage}}</p>
+
+  <ion-button (click)="onClick('bottom')" expand="block" shape="round">
+    Toast Bottom
+  </ion-button>
+
+</ion-content>

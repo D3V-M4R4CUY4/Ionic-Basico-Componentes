@@ -1,0 +1,46 @@
+<app-header titulo="Lista Sliding"></app-header>
+
+<ion-content>
+
+    <ion-list>
+
+        <!-- Aqui colocare el sliding del item pero debo de colocar dentro todo el item-->
+        <ion-item-sliding *ngFor="let user of usuarios | async">
+
+            <!-- Acciones al inicio  -->
+            <ion-item-options side="start">
+                <ion-item-option color="danger" (click)="delete(user)">
+                    <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+                </ion-item-option>
+            </ion-item-options>
+            
+            
+            <!-- Item  -->
+            <ion-item>
+                <ion-label>
+                    <h3>{{user.name}}</h3>
+                    <p>{{user.email}}</p>
+                    <ion-label slot="end" class="ion-text-end text-small">
+                        {{user.phone}}
+                    </ion-label>
+                </ion-label>
+            </ion-item>
+            
+            
+            <!-- Aqui vienen las acciones que deseamos que tenga el item -->
+            <ion-item-options side="end">
+                <ion-item-option (click)="favorito(user)">
+                    <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+                </ion-item-option>
+                <ion-item-option color="success" (click)="share(user)">
+                    <ion-icon slot="icon-only" name="share-outline"></ion-icon>
+                </ion-item-option>
+            </ion-item-options>
+
+
+        </ion-item-sliding>
+
+
+    </ion-list>
+
+</ion-content>
